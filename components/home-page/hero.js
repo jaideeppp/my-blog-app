@@ -15,7 +15,7 @@ function Hero() {
       </div>
       <h1>Hi, I'm Jaideep Phalswal</h1>
       <p>
-        I blog about web development - especially frontend frameworks.
+        I blog about web development - especially JavaScript and MERN Stack.
       </p>
     </section>
   );
