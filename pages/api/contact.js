@@ -4,14 +4,9 @@ async function handler(req, res) {
   if (req.method === 'POST') {
     const { email, name, message } = req.body;
 
-    if (
-      !email ||
-      !email.includes('@') ||
-      !name ||
-      name.trim() === '' ||
-      !message ||
-      message.trim() === ''
-    ) {
+    if (!email || !email.includes('@') ||
+      !name || name.trim() === '' ||
+      !message || message.trim() === '') {
       res.status(422).json({ message: 'Invalid input.' });
       return;
     }
@@ -24,7 +19,9 @@ async function handler(req, res) {
 
     let client;
 
-    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.ntrwp.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.3khed.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+    console.log(connectionString);
+
 
     try {
       client = await MongoClient.connect(connectionString);
